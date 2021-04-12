@@ -4,10 +4,11 @@ class CreateAnimals < ActiveRecord::Migration[6.0]
       t.string :animal
       t.string :breed
       t.string :location
-      t.integer :age
+      t.string :age
       t.text :description
-      t.text :history
+      t.text :sex
       t.string :image_url
+      t.integer :contact_id
 
       t.timestamps
     end
