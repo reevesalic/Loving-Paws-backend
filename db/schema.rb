@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2021_04_10_220221) do
     t.string "animal"
     t.string "breed"
     t.string "location"
-    t.integer "age"
+    t.string "age"
     t.text "description"
-    t.text "history"
+    t.text "sex"
     t.string "image_url"
+    t.integer "contact_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
