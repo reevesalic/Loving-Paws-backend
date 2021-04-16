@@ -6,6 +6,11 @@ class Api::V1::AnimalsController < ApplicationController
           
      end
 
+     def show
+          animal = Animal.find(param[:id])
+          render json: animal, status: 200
+     end
+
      def create
           animal = Animal.new(animal_params)
           if animal.save
@@ -16,10 +21,23 @@ class Api::V1::AnimalsController < ApplicationController
 
      end
 
+     def update
+          @animal = Animal.find(params[:id])
+          @animal.update(animal_params)
+          render json: @animal, status: 200
+     end
+
+     def destroy
+          @animal = Animal.find(params[:id])
+          @animal.delete
+          render json: {animalIid: @animal.id}
+     end
+
      private
      def animal_params
           params.require(:animal).permit(:animal, :breed, :location, :age, :description, :sex, :image_url, :contact_id)
      end
+end
 
      
-end
+
